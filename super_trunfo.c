@@ -12,8 +12,10 @@ int main() {
     float area1;                       // Área em km²
     float pib1;                        // PIB da cidade
     int pontosTuristicos1;             // Número de pontos turísticos
+    float densidadePop1;               // Densidade
+    float pibPerCapita1;               // Pib per Capita
 
-    // Variáveis para a segunda carta
+    // Variáveis da Carta 2
     char estado2;
     char codigo2[4];
     char nomeCidade2[TAM_MAX];
@@ -21,6 +23,8 @@ int main() {
     float area2;
     float pib2;
     int pontosTuristicos2;
+    float densidadePop2;
+    float pibPerCapita2;
 
     // Leitura dos dados da primeira carta
     printf("Cadastro da Carta 1:\n");
@@ -68,7 +72,11 @@ int main() {
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", &pontosTuristicos2);
 
-    // Exibição dos dados da primeira carta
+        // Cálculos da Carta 1
+    densidadePop1 = populacao1 / area1;
+    pibPerCapita1 = (pib1 * 1000000000) / populacao1;
+
+    // Exibição da Carta 1
     printf("\nCarta 1:\n");
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
@@ -77,8 +85,14 @@ int main() {
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadePop1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
-    // Exibição dos dados da segunda carta
+        // Cálculos da Carta 2
+    densidadePop2 = populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000) / populacao2;
+
+    // Exibição da Carta 2
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
@@ -87,5 +101,7 @@ int main() {
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadePop2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
     return 0;
